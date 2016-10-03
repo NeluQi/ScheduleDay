@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using MetroFramework.Forms;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework;
-using MetroFramework.Forms;
-using MetroFramework.Fonts;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ScheduleDay
 {
@@ -20,7 +12,6 @@ namespace ScheduleDay
         {
             InitializeComponent();
             loadTo(MainGrid);
-
         }
 
         /// Print
@@ -61,6 +52,7 @@ namespace ScheduleDay
             }
             catch { MessageBox.Show("Ошибка"); }
         }
+
         public static void loadTo(DataGridView dr)
         {
             try
@@ -84,14 +76,10 @@ namespace ScheduleDay
                         }
                     }
                 }
-
             }
             catch
             {
-
             }
-
-
         }
 
         private void MainGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -101,7 +89,6 @@ namespace ScheduleDay
 
         private void SetupButton_Click(object sender, EventArgs e)
         {
-       
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,9 +96,15 @@ namespace ScheduleDay
             MainGrid.CurrentCell.Value = "";
         }
 
-        private void важноToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void PrintButton_Click(object sender, EventArgs e)
         {
-            MainGrid.Rows[MainGrid.CurrentCell.RowIndex].Cells[MainGrid.CurrentCell.ColumnIndex].Style.BackColor = System.Drawing.Color.Red;
+            printDialog1.Document = printDocument;
+            DialogResult result = printDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
         }
     }
 }

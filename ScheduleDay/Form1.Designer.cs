@@ -54,6 +54,8 @@
             this.Day5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Day6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Day7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrintButton = new MetroFramework.Controls.MetroButton();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.ContextMenuPCMTabl.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,7 @@
             this.MainGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MainGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.MainGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.MainGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.MainGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
@@ -160,30 +162,7 @@
             this.SetupButton.UseSelectable = true;
             this.SetupButton.Click += new System.EventHandler(this.SetupButton_Click);
             // 
-            // важноToolStripMenuItem
-            // 
-            this.важноToolStripMenuItem.Name = "важноToolStripMenuItem";
-            this.важноToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.важноToolStripMenuItem.Text = "Красный";
-            this.важноToolStripMenuItem.Click += new System.EventHandler(this.важноToolStripMenuItem_Click);
-            // 
-            // желтыйToolStripMenuItem
-            // 
-            this.желтыйToolStripMenuItem.Name = "желтыйToolStripMenuItem";
-            this.желтыйToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.желтыйToolStripMenuItem.Text = "Желтый";
-            // 
-            // зеленыйToolStripMenuItem
-            // 
-            this.зеленыйToolStripMenuItem.Name = "зеленыйToolStripMenuItem";
-            this.зеленыйToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.зеленыйToolStripMenuItem.Text = "Зеленый";
-            // 
-            // серыйToolStripMenuItem
-            // 
-            this.серыйToolStripMenuItem.Name = "серыйToolStripMenuItem";
-            this.серыйToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.серыйToolStripMenuItem.Text = "Серый";
+         
             // 
             // пToolStripMenuItem
             // 
@@ -257,12 +236,30 @@
             this.Day7.Name = "Day7";
             this.Day7.Width = 146;
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.PrintButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.PrintButton.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.PrintButton.Location = new System.Drawing.Point(774, 34);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(75, 23);
+            this.PrintButton.TabIndex = 3;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseSelectable = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(956, 651);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.SetupButton);
             this.Controls.Add(this.MainGrid);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -298,6 +295,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Day5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day7;
+        private MetroFramework.Controls.MetroButton PrintButton;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 
